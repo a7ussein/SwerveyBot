@@ -13,13 +13,19 @@ public final class Constants {
 
     private static final double kWheelDiameterMeters = Units.inchesToMeters(4);
     private static final double kDriveMotorGearRatio = 1/8.14;
-    private static final double kTurningMotorGearRatio = 1/18.0;
+    private static final double kTurningMotorGearRatio = 1/12.8;
     public static final double kDriveEncoderRot2Meter = kDriveMotorGearRatio * Math.PI * kWheelDiameterMeters;
     public static final double kTurningEncoderRot2Rad = kTurningMotorGearRatio * 2 * Math.PI;
     public static final double kDriveEncoderRPM2MeterPerSec = kDriveEncoderRot2Meter / 60;
     public static final double kTurningEncoderRPM2RadPerSec = kTurningEncoderRot2Rad / 60;
     public static final double kPTurning = 0.5;
 
+  }
+
+  public static final class Sensors{
+    public static final int EncoderPort = 1;
+    public static final int GyroPort = 2;
+    public static final int BeamBreakerPort = 3;
   }
 
   public static final class DriveConstants{
