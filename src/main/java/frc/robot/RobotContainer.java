@@ -27,12 +27,12 @@ public class RobotContainer {
     () -> driveController.getRawAxis(DriverControllerConstants.kDriverXAxis), // axis 0
     () -> driveController.getRawAxis(DriverControllerConstants.kDriverYAxis), // axis 1
     () -> driveController.getRawAxis(DriverControllerConstants.kDriverRotAxis), // axis 4
-    () -> driveController.getRawButton(DriverControllerConstants.kDriverFieldOrientedButtonIdx))); // RawButton 1
+    () -> !driveController.getRawButton(DriverControllerConstants.kDriverFieldOrientedButtonIdx))); // By default the robot will operate in the fields reference frame
     configureBindings();
   }
 
   private void configureBindings() {
-    new JoystickButton(driveController, 2).onTrue(new InstantCommand(() -> swerveSubsytem.zeroHeading()));
+    new JoystickButton(driveController, 2).onTrue(new InstantCommand(() -> swerveSubsytem.zeroHeading())); // use this button to reset the direction of the field's refernce frame
 
   }
 
